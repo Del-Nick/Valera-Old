@@ -168,9 +168,10 @@ def standard_keyboard(id):
         .row() \
         .add(Text('&#128198; Расписание'), color=KeyboardButtonColor.POSITIVE) \
         .add(Text('7&#8419;&#128198; На неделю'), color=KeyboardButtonColor.POSITIVE) \
+        .row().add(Text('&#128218; Сессия'), color=KeyboardButtonColor.POSITIVE) \
         .row().add(Text('&#9881; Настройки'))
 
-        #
+
     # .add(Text('&#128373; ККО'), color=KeyboardButtonColor.PRIMARY).row() \
 
     # keyboard.add(Text('&#128198; Сессия'), color=KeyboardButtonColor.POSITIVE) \
@@ -502,8 +503,6 @@ def schedule_session(group):
         with fitz.open(path) as doc:
             for page in doc:
                 text += page.get_text()
-
-        print(text)
 
         for word in words_for_delete:
             text = text.replace(word, '')
